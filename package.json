@@ -7,8 +7,7 @@
     "hygen": "./dist/bin.js"
   },
   "files": [
-    "dist/*/**",
-    "dist"
+    "dist/**/*",
   ],
   "scripts": {
     "standalone": "rm -rf standalone; yarn build:lib && yarn pkg package.json --out-path standalone && node scripts/standalone.js",
