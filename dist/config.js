@@ -35,7 +35,7 @@ class ConfigResolver {
     resolve(from) {
         return __awaiter(this, void 0, void 0, function* () {
             const configCandidates = configLookup(this.configFile, from);
-            configCandidates.push(os_1.homedir() + this.configFile);
+            configCandidates.push(os_1.homedir() + "/" + this.configFile);
             const { exists, load, none } = this.io;
             for (const candidate of configCandidates) {
                 if (yield exists(candidate)) {
