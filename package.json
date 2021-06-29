@@ -1,11 +1,15 @@
 {
   "name": "hygen",
-  "version": "6.1.5",
+  "version": "6.1.4",
   "main": "dist/index.js",
   "repository": "https://github.com/Patriot720/hygen",
   "bin": {
     "hygen": "./dist/bin.js"
   },
+  "files": [
+    "dist/*/**",
+    "dist"
+  ],
   "scripts": {
     "standalone": "rm -rf standalone; yarn build:lib && yarn pkg package.json --out-path standalone && node scripts/standalone.js",
     "standalone:brew-sha": "shasum -a 256 standalone/*.macos.*.tar.gz",
