@@ -1,3 +1,4 @@
+import { homedir } from 'os'
 import importedPath from 'path'
 import { ResolverIO } from './types'
 
@@ -28,6 +29,7 @@ class ConfigResolver {
 
   async resolve(from: string) {
     const configCandidates = configLookup(this.configFile, from)
+    configCandidates.push(homedir() + this.configFile);
     const { exists, load, none } = this.io
     for (const candidate of configCandidates) {
       if (await exists(candidate)) {

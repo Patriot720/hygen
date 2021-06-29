@@ -13,6 +13,7 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.reversePathsToWalk = exports.ConfigResolver = exports.configLookup = void 0;
+const os_1 = require("os");
 const path_1 = __importDefault(require("path"));
 // inline fp methods due to perf
 const uniq = arr => arr.filter((elem, pos, a) => a.indexOf(elem) === pos);
@@ -34,6 +35,7 @@ class ConfigResolver {
     resolve(from) {
         return __awaiter(this, void 0, void 0, function* () {
             const configCandidates = configLookup(this.configFile, from);
+            configCandidates.push(os_1.homedir() + this.configFile);
             const { exists, load, none } = this.io;
             for (const candidate of configCandidates) {
                 if (yield exists(candidate)) {
