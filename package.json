@@ -1,6 +1,6 @@
 {
   "name": "hygen",
-  "version": "6.1.4",
+  "version": "6.1.5",
   "main": "dist/index.js",
   "repository": "https://github.com/Patriot720/hygen",
   "bin": {
