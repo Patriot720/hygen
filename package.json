@@ -6,9 +6,6 @@
   "bin": {
     "hygen": "./dist/bin.js"
   },
-  "files": [
-    "dist/*/**"
-  ],
   "scripts": {
     "standalone": "rm -rf standalone; yarn build:lib && yarn pkg package.json --out-path standalone && node scripts/standalone.js",
     "standalone:brew-sha": "shasum -a 256 standalone/*.macos.*.tar.gz",
@@ -24,7 +21,6 @@
     "hygen": "ts-node src/bin.ts",
     "hygen:build": "node dist/bin.js",
     "hygen:timed": "node dist/bin.timed.js",
-    "docs:prepare": "cd hygen.io && yarn",
     "docs:watch": "cd hygen.io && yarn start",
     "docs:build": "cd hygen.io && yarn build",
     "docs:publish": "cd hygen.io && yarn deploy"
