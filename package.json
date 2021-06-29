@@ -11,7 +11,7 @@
     "standalone:brew-sha": "shasum -a 256 standalone/*.macos.*.tar.gz",
     "build:changelog": "conventional-changelog -i CHANGELOG.md -p angular > CHANGELOG.md",
     "build:lib": "tsc",
-    "prepare": "yarn build:lib && yarn build:changelog",
+    "prepare": "yarn build && yarn build:changelog",
     "build": "yarn build:lib && yarn build:changelog",
     "release": "yarn build && git commit -am 'build'; yarn version && git push --tags && git push origin master",
     "test:win32": "yarn jest --runInBand --testPathIgnorePatterns '.*metaverse-conditional.*'",
